@@ -1,19 +1,14 @@
 package com.h3c.spark.hbase.example.kerberos
 
-import org.apache.hadoop.fs.LocalFileSystem
-import org.apache.hadoop.hbase.client.{ConnectionFactory, Get, HTable, Result, Scan}
+import org.apache.hadoop.hbase.client.{Result, Scan}
 import org.apache.hadoop.hbase.mapreduce.TableInputFormat
-import org.apache.hadoop.hbase.security.User
 import org.apache.hadoop.hbase.util.Bytes
-import org.apache.hadoop.hbase.{CellUtil, HBaseConfiguration, TableName}
-import org.apache.hadoop.hdfs.DistributedFileSystem
-import org.apache.hadoop.security.UserGroupInformation
+import org.apache.hadoop.hbase.CellUtil
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.hadoop.hbase.io.ImmutableBytesWritable
 import org.apache.hadoop.hbase.protobuf.ProtobufUtil
 
 import java.util.Base64
-import scala.collection.JavaConversions._
 
 object SparkReadFromHBase {
   def main(args: Array[String]): Unit = {
